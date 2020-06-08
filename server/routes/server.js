@@ -284,7 +284,10 @@ module.exports = function (server) {
     method: 'GET',
     path: '/logtrail/config',
     handler: async function (request) {
-      var config = await loadConfig(server);
+   console.log("----authcred---- " + request.auth.credentials.username + " ---------------");
+   console.log("----securityTenant---- " + request.headers.securitytenant + " ---------------");
+      var tenant = request.headers.securitytenant;
+      var config = await loadConfig(server,tenant);
       return {
         ok: true,
         config: config
@@ -293,20 +296,21 @@ module.exports = function (server) {
   });
 };
 
-function loadConfig(server) {
+function loadConfig(server,tenant) {
   return new Promise((resolve, reject) => {
     const { callWithInternalUser } = server.plugins.elasticsearch.getCluster('admin');
+    var t=tenant.toLowerCase();
     var request = {
-      index: '.logtrail',
+      index: '.logtrail-'+t,
       type: 'config',
       id: 1
     };
     callWithInternalUser('get',request).then(function (resp) {
       //If elasticsearch has config use it.
       resolve(resp._source);
-      server.log (['info','status'],'Loaded logtrail config from Elasticsearch');
+      server.log (['info','status'],'Loaded logtrail config from Elasticsearch .logtrail-' + t);
     }).catch(function (error) {
-      server.log (['info','status'],'Error while loading config from Elasticsearch. Will use local');
+      server.log (['info','status'],'Error while loading config from Elasticsearch (.logtrail-' + t+ '. Will use local');
       var config = require('../../logtrail.json');
       resolve(config);
     });
