@@ -4,7 +4,7 @@
   "description": "Plugin to view, search & tail logs in Kibana",
   "main": "index.js",
   "kibana": {
-    "version": "7.7.0"
+    "version": "7.3.2"
   },
   "repository": {
     "type": "git",
@@ -14,35 +14,20 @@
   "bugs": {
     "url": "https://github.com/sivasamyk/logtrail/issues"
   },
-  "scripts": {
-    "preinstall": "node ../../preinstall_check",
-    "kbn": "node ../../scripts/kbn",
-    "lint": "eslint **/*.js",
-    "start": "plugin-helpers start",
-    "test:server": "plugin-helpers test:server",
-    "test:browser": "plugin-helpers test:browser",
-    "build": "plugin-helpers build"
-  },
   "dependencies": {
     "ansi-to-html": "^0.6.4",
     "handlebars": "4.0.14",
     "lodash": "4.17.13",
     "moment": "2.22.2",
     "sugar-date": "1.5.1",
-    "yarn": "^1.21.1"
+    "yarn": "^1.17.3"
   },
-  "devDependencies": {
-    "@elastic/eslint-config-kibana": "link:../../packages/eslint-config-kibana",
-    "@elastic/eslint-import-resolver-kibana": "^0.9.0",
-    "@kbn/plugin-helpers": "link:../../packages/kbn-plugin-helpers",
-    "babel-eslint": "^8.0.2",
-    "eslint": "^4.11.0",
-    "eslint-plugin-babel": "^4.1.1",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-jest": "^21.3.2",
-    "eslint-plugin-mocha": "^4.9.0",
-    "eslint-plugin-prefer-object-spread": "^1.2.1",
-    "eslint-plugin-react": "^7.0.1",
-    "expect.js": "^0.3.1"
+  "build": {
+    "git": {
+      "count": "436",
+      "sha": "86fae6a",
+      "date": "Sat, 24 Aug 2019 07:42:22 +0530"
+    },
+    "date": "Sun Sep 22 2019 18:21:37 GMT+0530 (India Standard Time)"
   }
 }

@@ -298,7 +298,7 @@ function loadConfig(server) {
     const { callWithInternalUser } = server.plugins.elasticsearch.getCluster('admin');
     var request = {
       index: '.logtrail',
-      type: '_doc',
+      type: 'config',
       id: 1
     };
     callWithInternalUser('get',request).then(function (resp) {
