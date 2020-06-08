@@ -3,7 +3,7 @@
   "index_patterns" : [
     {      
       "es": {
-        "default_index": "filebeat-*"
+        "default_index": "kibana-auditlog-*"
       },
       "tail_interval_in_seconds": 10,
       "es_index_time_offset_in_seconds": 0,
@@ -17,9 +17,9 @@
       "fields" : {
         "mapping" : {
             "timestamp" : "@timestamp",
-            "hostname" : "beat.hostname",
-            "program": "source",
-            "message": "message"
+            "hostname" : "audit_node_host_name",
+            "program": "audit_node_name",
+            "message": "audit_request_body"
         },
         "message_format": "{{{message}}}",
         "keyword_suffix" : "keyword"
