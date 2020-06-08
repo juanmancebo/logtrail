@@ -25,7 +25,7 @@ Installation
   - Download and install Elasticsearch and Kibana
   - Logtrail is supported and tested with Kibana 6.x and 5.x
 - Install logtrail plugin (requires restart of Kibana after install)
-  - Kibana 7.3.2(multenant): `./bin/kibana-plugin install https://github.com/juanmancebo/logtrail/releases/download/v7.3.2_0.1.31_Multitenancy/logtrail-7.3.2-0.1.31_multitenancy.zip`
+  - Kibana 7.3.2 (multenant): `./bin/kibana-plugin install https://github.com/juanmancebo/logtrail/releases/download/v7.3.2_0.1.31_Multitenancy/logtrail-7.3.2-0.1.31_multitenancy.zip`
   - Kibana 5.6.5 : `./bin/kibana-plugin install https://github.com/sivasamyk/logtrail/releases/download/v0.1.23/logtrail-5.7.7.0.1.23.zip`
   - Other versions : [https://github.com/sivasamyk/logtrail/releases](https://github.com/sivasamyk/logtrail/releases)
 - Kibana requires exact match of plugin version to the Kibana version. If you can't find logtrail plugin release for a Kibana release, follow the instrcutions [here](docs/how_to.md#2-update-kibanaversion-in-logtrail-plugin-archive) to update Kibana version in your logtrail plugin archive.
