@@ -296,7 +296,7 @@ module.exports = function (server) {
   });
 };
 
-function loadConfig(server,tenant) {
+function loadConfig(server,tenant="") {
   return new Promise((resolve, reject) => {
     const { callWithInternalUser } = server.plugins.elasticsearch.getCluster('admin');
     var t=tenant.toLowerCase();
